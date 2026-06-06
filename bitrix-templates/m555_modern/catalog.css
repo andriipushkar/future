@@ -1,0 +1,75 @@
+/* =====================================================================
+   M555.COM.UA — catalog.css
+   Стилі сторінок каталогу: панель сортування, пагінація, картка товару.
+   Підключати РАЗОМ із home.css (звідти беруться стилі карток .prod*).
+   ===================================================================== */
+
+/* Панель над списком */
+.cat-toolbar{
+	display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
+	padding:14px 18px;margin-bottom:22px;
+	background:var(--c-surface);border-radius:var(--radius);
+}
+.cat-toolbar__count{color:var(--c-muted);font-size:14px}
+.cat-toolbar__count b{color:var(--c-text)}
+.cat-sort{display:flex;align-items:center;gap:8px;font-size:14px}
+.cat-sort label{color:var(--c-muted)}
+.cat-sort select{
+	border:1px solid var(--c-border);background:#fff;color:var(--c-text);
+	border-radius:var(--radius-sm);padding:8px 12px;font:inherit;font-size:14px;cursor:pointer;
+}
+.cat-sort select:focus{outline:none;border-color:var(--c-brand);box-shadow:0 0 0 3px var(--c-brand-soft)}
+
+/* Пагінація */
+.cat-pager{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.cat-pager a,.cat-pager span{
+	min-width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;
+	padding:0 12px;border-radius:var(--radius-sm);border:1px solid var(--c-border);
+	background:#fff;color:var(--c-text);font-weight:500;font-size:14px;transition:all .15s var(--ease);
+}
+.cat-pager a:hover{border-color:var(--c-brand);color:var(--c-brand)}
+.cat-pager .cat-pager__current{background:var(--c-brand);border-color:var(--c-brand);color:#fff}
+
+/* Порожній розділ */
+.cat-empty{padding:60px 20px;text-align:center;color:var(--c-muted)}
+
+/* ───────── Картка товару (детальна) ───────── */
+.product{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:40px;margin:8px 0 20px}
+.product__gallery{position:sticky;top:96px;align-self:start}
+.product__photo{
+	border:1px solid var(--c-border);border-radius:var(--radius);overflow:hidden;
+	background:var(--c-surface);aspect-ratio:4/3;display:grid;place-items:center;
+}
+.product__photo img{width:100%;height:100%;object-fit:contain;padding:18px}
+.product__thumbs{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.product__thumbs img{width:72px;height:72px;object-fit:cover;border:1px solid var(--c-border);border-radius:10px;cursor:pointer;transition:border-color .15s}
+.product__thumbs img:hover{border-color:var(--c-brand)}
+
+.product__title{font-size:28px;line-height:1.2;letter-spacing:-.5px;margin:0 0 10px}
+.product__meta{display:flex;gap:18px;flex-wrap:wrap;color:var(--c-muted);font-size:13.5px;margin-bottom:18px}
+.product__meta b{color:var(--c-success)} /* в наявності */
+
+.product__pricebox{
+	background:var(--c-surface);border-radius:var(--radius);padding:22px;margin-bottom:20px;
+}
+.product__price{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+.product__price b{font-size:34px;letter-spacing:-1px}
+.product__price s{color:var(--c-muted);font-size:18px}
+.product__price .product__badge{background:var(--c-accent);color:#fff;font-size:13px;font-weight:600;padding:4px 10px;border-radius:20px;align-self:center}
+.product__actions{display:flex;gap:12px;flex-wrap:wrap}
+.product__actions .btn{padding:14px 28px;font-size:16px}
+.product__buy{flex:1;justify-content:center;min-width:180px}
+
+.product__props{width:100%;border-collapse:collapse;margin:8px 0 0;font-size:14px}
+.product__props th,.product__props td{padding:11px 0;border-bottom:1px solid var(--c-border);text-align:left;vertical-align:top}
+.product__props th{color:var(--c-muted);font-weight:500;width:45%}
+
+.product__desc{margin-top:34px}
+.product__desc h2{font-size:21px;margin:0 0 14px}
+
+@media(max-width:900px){
+	.product{grid-template-columns:1fr;gap:24px}
+	.product__gallery{position:static}
+	.product__title{font-size:23px}
+	.product__price b{font-size:28px}
+}

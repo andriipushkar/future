@@ -87,12 +87,26 @@ $tpl = SITE_TEMPLATE_PATH;
 				<span></span><span></span><span></span>
 			</button>
 
+			<?php
+			// Якщо у папці images/ є logo.svg або logo.png — показуємо картинку,
+			// інакше — текстову плашку. Нічого більше робити не треба.
+			$logoFile = "";
+			foreach (array("logo.svg", "logo.png") as $f) {
+				if (file_exists($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/images/" . $f)) {
+					$logoFile = SITE_TEMPLATE_PATH . "/images/" . $f; break;
+				}
+			}
+			?>
 			<a class="logo" href="<?= SITE_DIR ?>">
-				<span class="logo__mark">M</span>
-				<span class="logo__text">
-					<b>M555<span>.com.ua</span></b>
-					<small>Альянс Сервіс Україна</small>
-				</span>
+				<?php if ($logoFile): ?>
+					<img class="logo__img" src="<?= $logoFile ?>" alt="M555.COM.UA">
+				<?php else: ?>
+					<span class="logo__mark">M</span>
+					<span class="logo__text">
+						<b>M555<span>.com.ua</span></b>
+						<small>Альянс Сервіс Україна</small>
+					</span>
+				<?php endif; ?>
 			</a>
 
 			<form class="search" action="<?= SITE_DIR ?>search/" method="get" role="search">
