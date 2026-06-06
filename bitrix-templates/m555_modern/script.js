@@ -131,5 +131,25 @@
 			go(0);
 			start();
 		});
+
+		/* ───────── Перемикач варіантів товару (SKU) ───────── */
+		document.querySelectorAll("[data-offers]").forEach(function (box) {
+			var offers   = box.querySelectorAll("[data-offer]");
+			var priceEl  = document.getElementById("productPrice");
+			var buyEl    = document.getElementById("productBuy");
+
+			function select(btn) {
+				offers.forEach(function (o) { o.classList.remove("is-active"); });
+				btn.classList.add("is-active");
+				if (priceEl && btn.dataset.price) priceEl.textContent = btn.dataset.price;
+				if (buyEl && btn.dataset.buy) buyEl.setAttribute("href", btn.dataset.buy);
+			}
+			offers.forEach(function (btn) {
+				btn.addEventListener("click", function () { select(btn); });
+			});
+			// застосувати початково обраний (перший)
+			var active = box.querySelector("[data-offer].is-active") || offers[0];
+			if (active) select(active);
+		});
 	});
 })();

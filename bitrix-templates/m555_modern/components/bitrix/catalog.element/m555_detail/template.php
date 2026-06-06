@@ -59,19 +59,55 @@ $buyUrl = $arParams["~BUY_URL_TEMPLATE"] ?: ("?action=BUY&id=" . $arResult["ID"]
 			<?php endif; ?>
 		</div>
 
-		<?php if ($priceNow): ?>
+		<?php
+		// Торгові пропозиції (SKU): рендеримо як перемикач варіантів.
+		// Кожен варіант несе свою ціну та посилання купівлі (data-атрибути),
+		// клік оновлює ціну і кнопку — без залежності від внутрішнього JS Бітрікс.
+		$offers = !empty($arResult["OFFERS"]) ? $arResult["OFFERS"] : array();
+		?>
+		<?php if ($priceNow || $offers): ?>
 		<div class="product__pricebox">
 			<div class="product__price">
-				<b><?= $priceNow ?></b>
-				<?php if ($priceOld): ?><s><?= $priceOld ?></s><?php endif; ?>
+				<b id="productPrice"><?= $priceNow ?: "—" ?></b>
+				<?php if ($priceOld): ?><s id="productPriceOld"><?= $priceOld ?></s><?php endif; ?>
 				<?php if ($discount): ?><span class="product__badge"><?= $discount ?></span><?php endif; ?>
 			</div>
+
+			<?php if ($offers): ?>
+			<div class="product__offers" data-offers>
+				<div class="product__offers-label">Виберіть варіант:</div>
+				<div class="product__offers-list">
+					<?php foreach ($offers as $i => $offer):
+						$oPrice = !empty($offer["MIN_PRICE"]) ? ($offer["MIN_PRICE"]["PRINT_DISCOUNT_VALUE"] ?: $offer["MIN_PRICE"]["PRINT_VALUE"]) : "";
+						// Назва варіанта: з SKU-властивостей або з назви пропозиції
+						$label = $offer["NAME"];
+						if (!empty($offer["DISPLAY_PROPERTIES"])) {
+							$parts = array();
+							foreach ($offer["DISPLAY_PROPERTIES"] as $p)
+								$parts[] = is_array($p["DISPLAY_VALUE"]) ? implode("/", $p["DISPLAY_VALUE"]) : $p["DISPLAY_VALUE"];
+							if ($parts) $label = implode(" · ", $parts);
+						}
+						?>
+						<button type="button" class="product__offer<?= $i === 0 ? ' is-active' : '' ?>"
+							data-offer
+							data-price="<?= htmlspecialcharsbx($oPrice) ?>"
+							data-buy="?action=BUY&id=<?= $offer["ID"] ?>">
+							<?= htmlspecialcharsbx($label) ?>
+						</button>
+					<?php endforeach; ?>
+				</div>
+			</div>
+			<?php endif; ?>
+
 			<div class="product__actions">
-				<a class="btn btn--accent product__buy" href="<?= htmlspecialcharsbx($buyUrl) ?>" rel="nofollow">
+				<a class="btn btn--accent product__buy" id="productBuy" href="<?= htmlspecialcharsbx($buyUrl) ?>" rel="nofollow">
 					<svg viewBox="0 0 24 24" width="20" height="20"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM6.2 4 5.4 2H2v2h2.2l3.1 9.6-1.2 2.1A2 2 0 0 0 7.8 19H20v-2H8.4l1-2h7.5a2 2 0 0 0 1.8-1.2L21.7 7H7.1l-.9-3Z"/></svg>
 					Купити
 				</a>
-				<a class="btn btn--ghost" href="<?= SITE_DIR ?>personal/cart/">У кошик →</a>
+				<a class="btn btn--ghost product-fav" href="<?= SITE_DIR ?>personal/cart/?action=DELAY&id=<?= $arResult["ID"] ?>" rel="nofollow" title="Додати в обране">
+					<svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.7 2.3 6 5.6 6c2 0 3.2 1.2 4.4 2.6C11.2 7.2 12.4 6 14.4 6c3.3 0 4.7 3.7 3.1 6.5C19 16.65 12 21 12 21Z"/></svg>
+					В обране
+				</a>
 			</div>
 		</div>
 		<?php endif; ?>
@@ -94,4 +130,31 @@ $buyUrl = $arParams["~BUY_URL_TEMPLATE"] ?: ("?action=BUY&id=" . $arResult["ID"]
 	<h2>Опис товару</h2>
 	<?= $arResult["DETAIL_TEXT"] ?>
 </div>
+<?php endif; ?>
+
+<?php
+// ───────── Схожі товари ─────────
+// Популярні товари з того ж каталогу (за бажанням замініть на товари того ж розділу).
+if (!empty($arResult["IBLOCK_ID"])): ?>
+<section class="home-section product-related">
+	<div class="home-section__head"><h2>Схожі товари</h2></div>
+	<?php $APPLICATION->IncludeComponent(
+		"bitrix:catalog.top", "m555_hits",
+		array(
+			"IBLOCK_TYPE"        => $arResult["IBLOCK_TYPE_ID"] ?? "catalog",
+			"IBLOCK_ID"          => $arResult["IBLOCK_ID"],
+			"ELEMENT_COUNT"      => "4",
+			"LINE_ELEMENT_COUNT" => "4",
+			"PRICE_CODE"         => array("BASE"),
+			"SHOW_OLD_PRICE"     => "Y",
+			"BASKET_URL"         => SITE_DIR . "personal/cart/",
+			"ELEMENT_SORT_FIELD" => "SHOWS",
+			"ELEMENT_SORT_ORDER" => "DESC",
+			"CACHE_TYPE"         => "A",
+			"CACHE_TIME"         => "3600",
+			"CACHE_GROUPS"       => "Y",
+		),
+		false
+	); ?>
+</section>
 <?php endif; ?>

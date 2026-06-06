@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>M555.COM.UA — прев'ю сторінки товару</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="template_styles.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="home.css">
+	<link rel="stylesheet" href="catalog.css">
+	<style>.preview-note{background:#fffbe6;border-bottom:1px solid #f3e6a8;color:#7a5d00;font-size:13px;text-align:center;padding:8px}
+	.demo-photo{width:60%;color:#aeb8cc}</style>
+</head>
+<body class="m555">
+<div class="preview-note">Прев'ю сторінки товару (без CMS). На сайті формується компонентом bitrix:catalog.element (шаблон m555_detail).</div>
+<div class="page-wrapper" id="top">
+
+	<header class="site-header" id="site-header">
+		<div class="container site-header__inner">
+			<button class="burger" type="button" data-burger aria-label="Меню"><span></span><span></span><span></span></button>
+			<a class="logo" href="preview.html"><span class="logo__mark">M</span><span class="logo__text"><b>M555<span>.com.ua</span></b><small>Альянс Сервіс Україна</small></span></a>
+			<form class="search" onsubmit="return false" role="search">
+				<input class="search__input" type="text" placeholder="Пошук товарів…">
+				<button class="search__btn" type="submit"><svg viewBox="0 0 24 24"><path d="M10 4a6 6 0 1 0 3.9 10.6l4.7 4.7 1.4-1.4-4.7-4.7A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/></svg><span>Знайти</span></button>
+			</form>
+			<div class="header-actions">
+				<a class="ha ha--phone" href="tel:0800501765"><svg viewBox="0 0 24 24" class="ha__ic"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.6 3.6a1 1 0 0 1-.25 1l-2.25 2.2Z"/></svg><span class="ha__txt"><b>0 800 50 17 65</b><small>Безкоштовно</small></span></a>
+				<a class="ha ha--cart" href="#"><svg viewBox="0 0 24 24" class="ha__ic"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM6.2 4 5.4 2H2v2h2.2l3.1 9.6-1.2 2.1A2 2 0 0 0 7.8 19H20v-2H8.4l1-2h7.5a2 2 0 0 0 1.8-1.2L21.7 7H7.1l-.9-3Z"/></svg><span class="ha__txt"><b>Кошик</b><small>2 товари</small></span></a>
+			</div>
+		</div>
+	</header>
+
+	<main class="site-main">
+		<div class="container">
+			<nav class="breadcrumbs"><a href="preview.html">Головна</a><span class="breadcrumbs__sep">›</span><a href="#">Причепи</a><span class="breadcrumbs__sep">›</span><span class="breadcrumbs__current">Причіп легковий одновісний</span></nav>
+		</div>
+		<div class="container content-area">
+
+			<div class="product">
+				<div class="product__gallery">
+					<div class="product__photo">
+						<svg class="demo-photo" viewBox="0 0 24 24"><path d="M4 7h12v8H4V7Zm13 2h2l3 3v3h-1.2a2 2 0 1 1-3.6 0H8.8a2 2 0 1 1-3.6 0H4v-1h13V9Z"/></svg>
+					</div>
+					<div class="product__thumbs">
+						<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect width='72' height='72' fill='%23eef2fa'/%3E%3C/svg%3E" alt="">
+						<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect width='72' height='72' fill='%23e6ecf6'/%3E%3C/svg%3E" alt="">
+						<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Crect width='72' height='72' fill='%23dfe6f2'/%3E%3C/svg%3E" alt="">
+					</div>
+				</div>
+
+				<div class="product__info">
+					<h1 class="product__title">Причіп легковий одновісний 1.5×1.1 м</h1>
+					<div class="product__meta">
+						<span><b>● В наявності</b></span>
+						<span>Артикул: ALU-1511</span>
+						<span>Гарантія: 24 міс.</span>
+					</div>
+
+					<div class="product__pricebox">
+						<div class="product__price">
+							<b id="productPrice">18 900 ₴</b>
+							<s id="productPriceOld">22 200 ₴</s>
+							<span class="product__badge">−15%</span>
+						</div>
+
+						<div class="product__offers" data-offers>
+							<div class="product__offers-label">Виберіть варіант:</div>
+							<div class="product__offers-list">
+								<button type="button" class="product__offer is-active" data-offer data-price="18 900 ₴" data-buy="#">Борт 1.1 м</button>
+								<button type="button" class="product__offer" data-offer data-price="21 400 ₴" data-buy="#">Борт 1.3 м</button>
+								<button type="button" class="product__offer" data-offer data-price="24 700 ₴" data-buy="#">Борт 1.3 м + тент</button>
+							</div>
+						</div>
+
+						<div class="product__actions">
+							<a class="btn btn--accent product__buy" id="productBuy" href="#"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM6.2 4 5.4 2H2v2h2.2l3.1 9.6-1.2 2.1A2 2 0 0 0 7.8 19H20v-2H8.4l1-2h7.5a2 2 0 0 0 1.8-1.2L21.7 7H7.1l-.9-3Z"/></svg>Купити</a>
+							<a class="btn btn--ghost product-fav" href="#"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.7 2.3 6 5.6 6c2 0 3.2 1.2 4.4 2.6C11.2 7.2 12.4 6 14.4 6c3.3 0 4.7 3.7 3.1 6.5C19 16.65 12 21 12 21Z"/></svg>В обране</a>
+						</div>
+					</div>
+
+					<table class="product__props">
+						<tr><th>Вантажопідйомність</th><td>750 кг</td></tr>
+						<tr><th>Розмір кузова</th><td>1500 × 1100 мм</td></tr>
+						<tr><th>Матеріал</th><td>Оцинкована сталь</td></tr>
+						<tr><th>Колеса</th><td>R13, ресорна підвіска</td></tr>
+						<tr><th>Маса спорядженого</th><td>140 кг</td></tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="product__desc">
+				<h2>Опис товару</h2>
+				<p>Надійний одновісний причіп для перевезення вантажів до 750 кг. Міцний оцинкований кузов стійкий до корозії, ресорна підвіска забезпечує плавність ходу. Комплектується документами для реєстрації в сервісному центрі.</p>
+			</div>
+
+			<section class="home-section product-related">
+				<div class="home-section__head"><h2>Схожі товари</h2></div>
+				<div class="prod-grid">
+					<div class="prod"><div class="prod__tools"><a class="prod__tool prod__tool--fav" href="#"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.7 2.3 6 5.6 6c2 0 3.2 1.2 4.4 2.6C11.2 7.2 12.4 6 14.4 6c3.3 0 4.7 3.7 3.1 6.5C19 16.65 12 21 12 21Z"/></svg></a><a class="prod__tool prod__tool--cmp" href="#"><svg viewBox="0 0 24 24"><path d="M5 21V9H8v12H5Zm5.5 0V3h3v18h-3ZM16 21v-7h3v7h-3Z"/></svg></a></div><a class="prod__img" href="#"><svg viewBox="0 0 24 24"><path d="M4 7h12v8H4V7Zm13 2h2l3 3v3h-1.2a2 2 0 1 1-3.6 0H8.8a2 2 0 1 1-3.6 0H4v-1h13V9Z"/></svg></a><div class="prod__body"><div class="prod__name"><a href="#">Причіп двовісний 2.0×1.3 м</a></div><div class="prod__price"><b>34 500 ₴</b></div><a class="btn btn--accent prod__buy" href="#">Детальніше</a></div></div>
+					<div class="prod"><div class="prod__tools"><a class="prod__tool prod__tool--fav" href="#"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.7 2.3 6 5.6 6c2 0 3.2 1.2 4.4 2.6C11.2 7.2 12.4 6 14.4 6c3.3 0 4.7 3.7 3.1 6.5C19 16.65 12 21 12 21Z"/></svg></a><a class="prod__tool prod__tool--cmp" href="#"><svg viewBox="0 0 24 24"><path d="M5 21V9H8v12H5Zm5.5 0V3h3v18h-3ZM16 21v-7h3v7h-3Z"/></svg></a></div><a class="prod__img" href="#"><svg viewBox="0 0 24 24"><path d="M4 7h12v8H4V7Zm13 2h2l3 3v3h-1.2a2 2 0 1 1-3.6 0H8.8a2 2 0 1 1-3.6 0H4v-1h13V9Z"/></svg></a><div class="prod__body"><div class="prod__name"><a href="#">Тент для причепа 1.5 м</a></div><div class="prod__price"><b>2 100 ₴</b></div><a class="btn btn--accent prod__buy" href="#">Детальніше</a></div></div>
+					<div class="prod"><div class="prod__tools"><a class="prod__tool prod__tool--fav" href="#"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.7 2.3 6 5.6 6c2 0 3.2 1.2 4.4 2.6C11.2 7.2 12.4 6 14.4 6c3.3 0 4.7 3.7 3.1 6.5C19 16.65 12 21 12 21Z"/></svg></a><a class="prod__tool prod__tool--cmp" href="#"><svg viewBox="0 0 24 24"><path d="M5 21V9H8v12H5Zm5.5 0V3h3v18h-3ZM16 21v-7h3v7h-3Z"/></svg></a></div><a class="prod__img" href="#"><svg viewBox="0 0 24 24"><path d="M4 7h12v8H4V7Zm13 2h2l3 3v3h-1.2a2 2 0 1 1-3.6 0H8.8a2 2 0 1 1-3.6 0H4v-1h13V9Z"/></svg></a><div class="prod__body"><div class="prod__name"><a href="#">Опора причепа поворотна</a></div><div class="prod__price"><b>480 ₴</b></div><a class="btn btn--accent prod__buy" href="#">Детальніше</a></div></div>
+					<div class="prod"><div class="prod__tools"><a class="prod__tool prod__tool--fav" href="#"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.7 2.3 6 5.6 6c2 0 3.2 1.2 4.4 2.6C11.2 7.2 12.4 6 14.4 6c3.3 0 4.7 3.7 3.1 6.5C19 16.65 12 21 12 21Z"/></svg></a><a class="prod__tool prod__tool--cmp" href="#"><svg viewBox="0 0 24 24"><path d="M5 21V9H8v12H5Zm5.5 0V3h3v18h-3ZM16 21v-7h3v7h-3Z"/></svg></a></div><a class="prod__img" href="#"><svg viewBox="0 0 24 24"><path d="M4 7h12v8H4V7Zm13 2h2l3 3v3h-1.2a2 2 0 1 1-3.6 0H8.8a2 2 0 1 1-3.6 0H4v-1h13V9Z"/></svg></a><div class="prod__body"><div class="prod__name"><a href="#">Зчіпний пристрій</a></div><div class="prod__price"><b>1 250 ₴</b></div><a class="btn btn--accent prod__buy" href="#">Детальніше</a></div></div>
+				</div>
+			</section>
+
+		</div>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<div class="footer-bottom"><span>© 2026 M555.COM.UA — ТзОВ «Альянс Сервіс Україна».</span></div>
+		</div>
+	</footer>
+	<a class="to-top" href="#top" data-to-top aria-label="Нагору"><svg viewBox="0 0 24 24"><path d="m12 6 8 8-1.4 1.4L12 8.8 5.4 15.4 4 14l8-8Z"/></svg></a>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

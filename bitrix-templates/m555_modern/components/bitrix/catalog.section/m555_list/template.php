@@ -43,6 +43,14 @@ endif;
 	}
 	?>
 	<div class="prod">
+		<div class="prod__tools">
+			<a class="prod__tool prod__tool--fav" href="<?= SITE_DIR ?>personal/cart/?action=DELAY&id=<?= $item["ID"] ?>" rel="nofollow" title="В обране" aria-label="В обране">
+				<svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.7 2.3 6 5.6 6c2 0 3.2 1.2 4.4 2.6C11.2 7.2 12.4 6 14.4 6c3.3 0 4.7 3.7 3.1 6.5C19 16.65 12 21 12 21Z"/></svg>
+			</a>
+			<a class="prod__tool prod__tool--cmp" href="?action=ADD_TO_COMPARE_LIST&id=<?= $item["ID"] ?>" rel="nofollow" title="До порівняння" aria-label="До порівняння">
+				<svg viewBox="0 0 24 24"><path d="M5 21V9H8v12H5Zm5.5 0V3h3v18h-3ZM16 21v-7h3v7h-3Z"/></svg>
+			</a>
+		</div>
 		<a class="prod__img" href="<?= htmlspecialcharsbx($url) ?>">
 			<?php if ($priceOld): ?><span class="prod__tag">Знижка</span><?php endif; ?>
 			<?php if ($img): ?>
