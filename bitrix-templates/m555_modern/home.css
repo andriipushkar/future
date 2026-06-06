@@ -52,11 +52,14 @@
 
 /* Категорії */
 .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.cat-card{display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid var(--c-border);
-	border-radius:var(--radius);background:#fff;transition:transform .18s,box-shadow .18s,border-color .18s}
-.cat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
-.cat-card__ic{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;
-	background:var(--c-brand-soft);color:var(--c-brand);overflow:hidden}
+.cat-card{display:flex;flex-direction:column;gap:14px;padding:24px;
+	border:1px solid var(--glass-border);border-radius:var(--radius);
+	background:var(--glass);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);
+	box-shadow:var(--shadow-glass);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.cat-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.cat-card__ic{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;
+	background:linear-gradient(135deg,rgba(35,88,230,.16),rgba(35,88,230,.06));color:var(--c-brand);
+	border:1px solid rgba(255,255,255,.6);overflow:hidden}
 .cat-card__ic svg{width:30px;height:30px}
 .cat-card__ic img{width:100%;height:100%;object-fit:cover}
 .cat-card b{font-size:16px;color:var(--c-text)}
@@ -64,14 +67,16 @@
 
 /* Товари */
 .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.prod{border:1px solid var(--c-border);border-radius:var(--radius);overflow:hidden;background:#fff;
-	display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
-.prod:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
-.prod__img{aspect-ratio:1;background:var(--c-surface);position:relative;display:grid;place-items:center;color:#c2cadb;overflow:hidden}
+.prod{border:1px solid var(--glass-border);border-radius:var(--radius);overflow:hidden;
+	background:var(--glass);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);
+	box-shadow:var(--shadow-glass);
+	display:flex;flex-direction:column;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.prod:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.prod__img{aspect-ratio:1;background:linear-gradient(160deg,rgba(255,255,255,.5),rgba(238,242,250,.5));position:relative;display:grid;place-items:center;color:#aeb8cc;overflow:hidden}
 .prod__img img{width:100%;height:100%;object-fit:contain;padding:12px}
 .prod__img svg{width:64px;height:64px}
-.prod__tag{position:absolute;top:12px;left:12px;background:var(--c-accent);color:#fff;font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;z-index:2}
-.prod__tag--new{background:var(--c-success)}
+.prod__tag{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#ff8049,var(--c-accent));color:#fff;font-size:12px;font-weight:600;padding:5px 11px;border-radius:var(--radius-pill);z-index:2;box-shadow:0 4px 12px rgba(255,106,43,.35)}
+.prod__tag--new{background:linear-gradient(135deg,#22c55e,var(--c-success));box-shadow:0 4px 12px rgba(22,163,74,.32)}
 .prod__body{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
 .prod__name{font-size:14.5px;font-weight:500;line-height:1.35;flex:1;color:var(--c-text)}
 .prod__name a{color:inherit}
@@ -83,8 +88,12 @@
 
 /* Переваги */
 .adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.adv{display:flex;gap:14px;align-items:flex-start;padding:22px;background:var(--c-surface);border-radius:var(--radius)}
-.adv__ic{width:48px;height:48px;flex:0 0 auto;border-radius:12px;display:grid;place-items:center;background:#fff;color:var(--c-accent);box-shadow:var(--shadow-sm)}
+.adv{display:flex;gap:14px;align-items:flex-start;padding:24px;border-radius:var(--radius);
+	background:var(--glass);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);
+	border:1px solid var(--glass-border);box-shadow:var(--shadow-glass)}
+.adv__ic{width:50px;height:50px;flex:0 0 auto;border-radius:14px;display:grid;place-items:center;
+	background:linear-gradient(135deg,rgba(255,106,43,.18),rgba(255,106,43,.06));color:var(--c-accent);
+	border:1px solid rgba(255,255,255,.6)}
 .adv__ic svg{width:26px;height:26px}
 .adv b{display:block;margin-bottom:4px;font-size:15px;color:var(--c-text)}
 .adv span{color:var(--c-muted);font-size:13px;line-height:1.5}

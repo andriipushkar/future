@@ -33,15 +33,26 @@
 
 /* Універсальні кнопки для контенту */
 .btn {
-	display: inline-flex; align-items: center; gap: 9px;
-	padding: 12px 24px; border-radius: var(--radius-sm);
-	font-weight: 600; font-size: 15px; border: 0;
-	transition: background .15s, transform .1s;
+	display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+	padding: 13px 26px; border-radius: var(--radius-pill);
+	font-weight: 600; font-size: 15px; border: 0; cursor: pointer;
+	transition: filter .15s, transform .1s, box-shadow .15s, background .15s;
 }
 .btn:active { transform: translateY(1px); }
-.btn--primary { background: var(--c-brand); color: #fff; }
-.btn--primary:hover { background: var(--c-brand-dark); color: #fff; text-decoration: none; }
-.btn--accent { background: var(--c-accent); color: #fff; }
-.btn--accent:hover { background: var(--c-accent-dark); color: #fff; text-decoration: none; }
-.btn--ghost { background: var(--c-surface); color: var(--c-text); }
-.btn--ghost:hover { background: var(--c-surface-2); color: var(--c-text); text-decoration: none; }
+.btn--primary {
+	background: linear-gradient(135deg, #2f6bff, var(--c-brand)); color: #fff;
+	box-shadow: 0 8px 20px rgba(35,88,230,.30);
+}
+.btn--primary:hover { filter: brightness(1.06); color: #fff; text-decoration: none; }
+.btn--accent {
+	background: linear-gradient(135deg, #ff8049, var(--c-accent)); color: #fff;
+	box-shadow: 0 8px 20px rgba(255,106,43,.32);
+}
+.btn--accent:hover { filter: brightness(1.06); color: #fff; text-decoration: none; }
+.btn--ghost {
+	background: rgba(255,255,255,.55);
+	backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+	border: 1px solid var(--glass-border); color: var(--c-text);
+	box-shadow: var(--shadow-sm);
+}
+.btn--ghost:hover { background: rgba(255,255,255,.8); color: var(--c-text); text-decoration: none; }
