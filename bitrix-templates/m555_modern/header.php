@@ -32,6 +32,7 @@ $tpl = SITE_TEMPLATE_PATH;
 	<meta charset="<?= LANG_CHARSET ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<meta name="theme-color" content="#0f3aa0">
+	<script>(function(){try{var t=localStorage.getItem('m555-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -118,6 +119,10 @@ $tpl = SITE_TEMPLATE_PATH;
 			</form>
 
 			<div class="header-actions">
+				<button class="theme-toggle" type="button" data-theme-toggle aria-label="Змінити тему">
+					<svg class="ic-sun" viewBox="0 0 24 24"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1Zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1ZM4 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Zm14 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1ZM6 6l.7.7M17.3 17.3l.7.7M18 6l-.7.7M6.7 17.3l-.7.7"/></svg>
+					<svg class="ic-moon" viewBox="0 0 24 24"><path d="M21 13A8.5 8.5 0 1 1 11 3a7 7 0 0 0 10 10Z"/></svg>
+				</button>
 				<a class="ha ha--phone" href="tel:<?= $PHONE_MAIN_TEL ?>">
 					<svg viewBox="0 0 24 24" class="ha__ic"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.6 3.6a1 1 0 0 1-.25 1l-2.25 2.2Z"/></svg>
 					<span class="ha__txt">

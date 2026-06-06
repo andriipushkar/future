@@ -74,7 +74,7 @@ $BANNERS_ID    = "2";         // ID інфоблоку «Банери» для �
 */ ?>
 
 <!-- ───────── КАТЕГОРІЇ ───────── -->
-<section class="home-section">
+<section class="home-section reveal">
 	<div class="home-section__head">
 		<h2>Популярні категорії</h2>
 		<a href="<?= SITE_DIR ?>catalog/">Усі категорії →</a>
@@ -100,7 +100,7 @@ $BANNERS_ID    = "2";         // ID інфоблоку «Банери» для �
 </section>
 
 <!-- ───────── ХІТИ ПРОДАЖІВ ───────── -->
-<section class="home-section">
+<section class="home-section reveal">
 	<div class="home-section__head">
 		<h2>Хіти продажів</h2>
 		<a href="<?= SITE_DIR ?>catalog/">Дивитись усе →</a>
@@ -132,7 +132,7 @@ $BANNERS_ID    = "2";         // ID інфоблоку «Банери» для �
 </section>
 
 <!-- ───────── АКЦІЙНІ БАНЕРИ ───────── -->
-<section class="promo">
+<section class="promo reveal">
 	<div class="promo__card promo__card--a">
 		<h3>Безкоштовна доставка</h3>
 		<p>На замовлення від 3 000 ₴ по всій Україні</p>
@@ -146,7 +146,7 @@ $BANNERS_ID    = "2";         // ID інфоблоку «Банери» для �
 </section>
 
 <!-- ───────── ПЕРЕВАГИ ───────── -->
-<section class="home-section">
+<section class="home-section reveal">
 	<div class="adv-grid">
 		<div class="adv"><span class="adv__ic"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm-1 13-3-3 1.4-1.4L11 12.2l4.6-4.6L17 9l-6 6Z"/></svg></span><div><b>Офіційна гарантія</b><span>Прямі поставки від виробників</span></div></div>
 		<div class="adv"><span class="adv__ic"><svg viewBox="0 0 24 24"><path d="M3 6h11v9H3V6Zm12 3h3l3 3v3h-2a2 2 0 1 1-4 0h-3V9Z"/></svg></span><div><b>Швидка доставка</b><span>Нова Пошта, кур'єр, самовивіз</span></div></div>

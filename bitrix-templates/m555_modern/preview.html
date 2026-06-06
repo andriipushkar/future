@@ -48,6 +48,10 @@
 				<button class="search__btn" type="submit"><svg viewBox="0 0 24 24"><path d="M10 4a6 6 0 1 0 3.9 10.6l4.7 4.7 1.4-1.4-4.7-4.7A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/></svg><span>Знайти</span></button>
 			</form>
 			<div class="header-actions">
+				<button class="theme-toggle" type="button" data-theme-toggle aria-label="Змінити тему">
+					<svg class="ic-sun" viewBox="0 0 24 24"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1Zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1ZM4 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Zm14 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1ZM6 6l.7.7M17.3 17.3l.7.7M18 6l-.7.7M6.7 17.3l-.7.7"/></svg>
+					<svg class="ic-moon" viewBox="0 0 24 24"><path d="M21 13A8.5 8.5 0 1 1 11 3a7 7 0 0 0 10 10Z"/></svg>
+				</button>
 				<a class="ha ha--phone" href="tel:0800501765"><svg viewBox="0 0 24 24" class="ha__ic"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.6 3.6a1 1 0 0 1-.25 1l-2.25 2.2Z"/></svg><span class="ha__txt"><b>0 800 50 17 65</b><small>Безкоштовно по Україні</small></span></a>
 				<a class="ha ha--cart" href="#"><svg viewBox="0 0 24 24" class="ha__ic"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM6.2 4 5.4 2H2v2h2.2l3.1 9.6-1.2 2.1A2 2 0 0 0 7.8 19H20v-2H8.4l1-2h7.5a2 2 0 0 0 1.8-1.2L21.7 7H7.1l-.9-3Z"/></svg><span class="ha__txt"><b>Кошик</b><small>2 товари · 12 480 ₴</small></span></a>
 			</div>
@@ -114,7 +118,7 @@
 			</section>
 
 			<!-- CATEGORIES -->
-			<section class="home-section">
+			<section class="home-section reveal">
 				<div class="home-section__head"><h2>Популярні категорії</h2><a href="#">Усі категорії →</a></div>
 				<div class="cat-grid">
 					<a class="cat-card" href="#"><span class="cat-card__ic"><svg viewBox="0 0 24 24"><path d="M3 7h11v7H3V7Zm12 2h3l3 3v2h-2a2 2 0 1 1-4 0h-3a2 2 0 1 1-4 0H3v-1h12V9Z"/></svg></span><b>Причепи</b><span>140+ моделей</span></a>
@@ -125,7 +129,7 @@
 			</section>
 
 			<!-- PRODUCTS -->
-			<section class="home-section">
+			<section class="home-section reveal">
 				<div class="home-section__head"><h2>Хіти продажів</h2><a href="#">Дивитись усе →</a></div>
 				<div class="prod-grid">
 					<div class="prod"><div class="prod__tools"><a class="prod__tool prod__tool--fav" href="#" title="В обране"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.7 2.3 6 5.6 6c2 0 3.2 1.2 4.4 2.6C11.2 7.2 12.4 6 14.4 6c3.3 0 4.7 3.7 3.1 6.5C19 16.65 12 21 12 21Z"/></svg></a><a class="prod__tool prod__tool--cmp" href="#" title="Порівняти"><svg viewBox="0 0 24 24"><path d="M5 21V9H8v12H5Zm5.5 0V3h3v18h-3ZM16 21v-7h3v7h-3Z"/></svg></a></div><div class="prod__img"><span class="prod__tag">-15%</span><svg viewBox="0 0 24 24"><path d="M4 7h12v8H4V7Zm13 2h2l3 3v3h-1.2a2 2 0 1 1-3.6 0H8.8a2 2 0 1 1-3.6 0H4v-1h13V9Z"/></svg></div><div class="prod__body"><div class="prod__name">Причіп легковий одновісний 1.5×1.1 м</div><div class="prod__price"><b>18 900 ₴</b><s>22 200 ₴</s></div><a class="btn btn--accent prod__buy" href="#">Купити</a></div></div>
@@ -136,13 +140,13 @@
 			</section>
 
 			<!-- PROMO -->
-			<section class="promo">
+			<section class="promo reveal">
 				<div class="promo__card promo__card--a"><h3>Безкоштовна доставка</h3><p>На замовлення від 3 000 ₴ по всій Україні</p><a class="btn" style="background:#fff;color:#16a34a;align-self:flex-start" href="#">Умови доставки</a></div>
 				<div class="promo__card promo__card--b"><h3>Розпродаж сезону</h3><p>Знижки до 40% на товари для дому та саду</p><a class="btn" style="background:#fff;color:#e85214;align-self:flex-start" href="#">До акцій</a></div>
 			</section>
 
 			<!-- ADVANTAGES -->
-			<section class="home-section">
+			<section class="home-section reveal">
 				<div class="adv-grid">
 					<div class="adv"><span class="adv__ic"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm-1 13-3-3 1.4-1.4L11 12.2l4.6-4.6L17 9l-6 6Z"/></svg></span><div><b>Офіційна гарантія</b><span>Прямі поставки від виробників</span></div></div>
 					<div class="adv"><span class="adv__ic"><svg viewBox="0 0 24 24"><path d="M3 6h11v9H3V6Zm12 3h3l3 3v3h-2a2 2 0 1 1-4 0h-3V9Z"/></svg></span><div><b>Швидка доставка</b><span>Нова Пошта, кур'єр, самовивіз</span></div></div>

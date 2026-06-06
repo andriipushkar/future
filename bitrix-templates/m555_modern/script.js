@@ -132,6 +132,35 @@
 			start();
 		});
 
+		/* ───────── Перемикач теми (світла/темна) ───────── */
+		var themeBtn = document.querySelector("[data-theme-toggle]");
+		if (themeBtn) {
+			themeBtn.addEventListener("click", function () {
+				var cur = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+				var next = cur === "dark" ? "light" : "dark";
+				document.documentElement.setAttribute("data-theme", next);
+				try { localStorage.setItem("m555-theme", next); } catch (e) {}
+			});
+		}
+
+		/* ───────── Поява блоків при скролі ───────── */
+		var reveals = document.querySelectorAll(".reveal");
+		if (reveals.length) {
+			if (!("IntersectionObserver" in window)) {
+				reveals.forEach(function (el) { el.classList.add("is-visible"); });
+			} else {
+				var io = new IntersectionObserver(function (entries) {
+					entries.forEach(function (entry) {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("is-visible");
+							io.unobserve(entry.target);
+						}
+					});
+				}, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+				reveals.forEach(function (el) { io.observe(el); });
+			}
+		}
+
 		/* ───────── Перемикач варіантів товару (SKU) ───────── */
 		document.querySelectorAll("[data-offers]").forEach(function (box) {
 			var offers   = box.querySelectorAll("[data-offer]");
