@@ -1,0 +1,47 @@
+/* =====================================================================
+   M555.COM.UA — styles.css
+   Стилі контентної області (текст сторінок, що редагується в адмінці).
+   ===================================================================== */
+
+.content-area h1 { font-size: 30px; line-height: 1.2; letter-spacing: -.5px; margin: 6px 0 18px; }
+.content-area h2 { font-size: 23px; margin: 34px 0 14px; }
+.content-area h3 { font-size: 19px; margin: 26px 0 12px; }
+.content-area p  { margin: 0 0 14px; }
+.content-area ul, .content-area ol { margin: 0 0 16px; padding-left: 22px; }
+.content-area li { margin-bottom: 7px; }
+
+.content-area a { color: var(--c-brand); }
+.content-area a:hover { color: var(--c-brand-dark); text-decoration: underline; }
+
+.content-area img { border-radius: var(--radius-sm); }
+
+.content-area table {
+	width: 100%; border-collapse: collapse; margin: 0 0 18px;
+	font-size: 14px;
+}
+.content-area th, .content-area td {
+	border: 1px solid var(--c-border); padding: 10px 14px; text-align: left;
+}
+.content-area th { background: var(--c-surface); font-weight: 600; }
+
+.content-area blockquote {
+	margin: 0 0 18px; padding: 14px 20px;
+	border-left: 4px solid var(--c-brand);
+	background: var(--c-brand-soft); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+	color: var(--c-text);
+}
+
+/* Універсальні кнопки для контенту */
+.btn {
+	display: inline-flex; align-items: center; gap: 9px;
+	padding: 12px 24px; border-radius: var(--radius-sm);
+	font-weight: 600; font-size: 15px; border: 0;
+	transition: background .15s, transform .1s;
+}
+.btn:active { transform: translateY(1px); }
+.btn--primary { background: var(--c-brand); color: #fff; }
+.btn--primary:hover { background: var(--c-brand-dark); color: #fff; text-decoration: none; }
+.btn--accent { background: var(--c-accent); color: #fff; }
+.btn--accent:hover { background: var(--c-accent-dark); color: #fff; text-decoration: none; }
+.btn--ghost { background: var(--c-surface); color: var(--c-text); }
+.btn--ghost:hover { background: var(--c-surface-2); color: var(--c-text); text-decoration: none; }
