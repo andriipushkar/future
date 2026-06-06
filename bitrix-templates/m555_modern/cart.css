@@ -1,0 +1,109 @@
+/* =====================================================================
+   M555.COM.UA — cart.css
+   Стилізація СТАНДАРТНИХ компонентів кошика та оформлення замовлення
+   (bitrix:sale.basket.basket, bitrix:sale.order.ajax) під тему шаблону.
+
+   Нічого в логіці не міняється — лише зовнішній вигляд.
+   Підключати на сторінках кошика та оформлення:
+     $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/cart.css");
+   ===================================================================== */
+
+/* ── Загальні кнопки компонентів продажу ── */
+.m555 .btn-default,
+.m555 .basket-btns .btn,
+.m555 .sale-order-btn,
+.m555 .checkout-form-btn {
+	border-radius: var(--radius-sm) !important;
+	font-weight: 600 !important;
+	border: 1px solid var(--c-border) !important;
+	background: var(--c-surface) !important;
+	color: var(--c-text) !important;
+	transition: all .15s var(--ease);
+}
+.m555 .btn-primary,
+.m555 .checkout-button,
+.m555 .basket-checkout-container .checkout,
+.m555 .sale-paysystem-wrapper-foreach .btn-primary,
+.m555 #basketOrder .checkout {
+	background: var(--c-accent) !important;
+	border-color: var(--c-accent) !important;
+	color: #fff !important;
+	border-radius: var(--radius-sm) !important;
+	font-weight: 600 !important;
+	padding: 12px 26px !important;
+	box-shadow: none !important;
+}
+.m555 .btn-primary:hover,
+.m555 .checkout-button:hover { background: var(--c-accent-dark) !important; border-color: var(--c-accent-dark) !important; }
+
+/* ── Кошик: список товарів ── */
+.m555 .basket-items-list-wrapper,
+.m555 .basket-checkout-container {
+	border: 1px solid var(--c-border);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow-sm);
+	overflow: hidden;
+}
+.m555 .basket-items-list-header,
+.m555 .basket-items-list-item-container {
+	border-color: var(--c-border) !important;
+}
+.m555 .basket-item-block-info .basket-item-info-name,
+.m555 .basket-item-label-text { color: var(--c-text) !important; font-weight: 500; }
+.m555 .basket-item-price-current,
+.m555 .basket-item-price-total { color: var(--c-text) !important; font-weight: 700; }
+.m555 .basket-item-price-old { color: var(--c-muted) !important; }
+
+/* Лічильник кількості */
+.m555 .basket-item-amount-field-block {
+	border: 1px solid var(--c-border) !important;
+	border-radius: var(--radius-sm) !important;
+	overflow: hidden;
+}
+.m555 .basket-item-amount-field { color: var(--c-text) !important; }
+
+/* Купон */
+.m555 .basket-coupon-block input[type="text"],
+.m555 .basket-coupon-section input {
+	border: 1px solid var(--c-border) !important;
+	border-radius: var(--radius-sm) !important;
+}
+
+/* Підсумок */
+.m555 .basket-checkout-container .basket-checkout-block-total-price,
+.m555 .basket-coupon-block-total-price { color: var(--c-brand) !important; font-weight: 800; }
+
+/* ── Оформлення замовлення (sale.order.ajax) ── */
+.m555 .sale-order-page,
+.m555 .bx-soa-section,
+.m555 .bx-soa-pp-company,
+.m555 .bx-soa-cart-total {
+	border-radius: var(--radius) !important;
+}
+.m555 .bx-soa-section { border: 1px solid var(--c-border) !important; box-shadow: var(--shadow-sm); }
+.m555 .bx-soa-section-title { color: var(--c-text) !important; font-weight: 700 !important; }
+.m555 .bx-active.bx-step,
+.m555 .bx-soa-pp-company.bx-selected,
+.m555 .bx-selected {
+	border-color: var(--c-brand) !important;
+	box-shadow: 0 0 0 2px var(--c-brand-soft) !important;
+}
+.m555 .bx-soa-cart-total-line-total,
+.m555 .bx-soa-cart-d { color: var(--c-brand) !important; }
+.m555 .form-control,
+.m555 .bx-soa-customer input,
+.m555 .bx-soa-customer textarea,
+.m555 .bx-soa-customer select {
+	border: 1px solid var(--c-border) !important;
+	border-radius: var(--radius-sm) !important;
+	box-shadow: none !important;
+}
+.m555 .form-control:focus,
+.m555 .bx-soa-customer input:focus {
+	border-color: var(--c-brand) !important;
+	box-shadow: 0 0 0 3px var(--c-brand-soft) !important;
+}
+
+/* Порожній кошик */
+.m555 .basket-empty-block { text-align: center; padding: 60px 20px; }
+.m555 .basket-empty-block .basket-empty-label { color: var(--c-muted) !important; }

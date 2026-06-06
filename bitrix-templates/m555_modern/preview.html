@@ -78,18 +78,37 @@
 	<main class="site-main">
 		<div class="container content-area">
 
-			<!-- HERO -->
-			<section class="home-hero">
-				<div class="home-hero__deco"></div>
-				<div class="home-hero__inner">
-					<span class="home-hero__badge">🚚 Офіційний імпортер · Гарантія від виробника</span>
-					<h1>Все для бізнесу, дому та саду — в одному магазині</h1>
-					<p>Причепи, контейнери, інструмент і тактичне спорядження від перевірених брендів. Супер ціни та швидка доставка по всій Україні.</p>
-					<div class="home-hero__cta">
-						<a class="btn btn--accent" href="#">Перейти в каталог</a>
-						<a class="btn btn--ghost" style="background:rgba(255,255,255,.15);color:#fff" href="#">Акційні товари</a>
-					</div>
+			<!-- БАНЕР-СЛАЙДЕР -->
+			<section class="home-slider" data-slider>
+				<div class="home-slider__track" data-slider-track>
+					<a class="home-slider__slide" href="#" style="background-image:linear-gradient(120deg,#0f3aa0,#3b76ff)">
+						<div class="home-slider__content">
+							<span class="home-hero__badge">🚚 Офіційний імпортер · Гарантія</span>
+							<h2>Все для бізнесу, дому та саду — в одному магазині</h2>
+							<p>Причепи, контейнери, інструмент і тактичне спорядження від перевірених брендів.</p>
+							<span class="btn btn--accent">Перейти в каталог</span>
+						</div>
+					</a>
+					<a class="home-slider__slide" href="#" style="background-image:linear-gradient(120deg,#0b5650,#0f766e)">
+						<div class="home-slider__content">
+							<span class="home-hero__badge">🔥 Розпродаж сезону</span>
+							<h2>Знижки до 40% на товари для дому та саду</h2>
+							<p>Поспішайте — кількість товарів за акційними цінами обмежена.</p>
+							<span class="btn btn--accent">До акцій</span>
+						</div>
+					</a>
+					<a class="home-slider__slide" href="#" style="background-image:linear-gradient(120deg,#7f1313,#b91c1c)">
+						<div class="home-slider__content">
+							<span class="home-hero__badge">🚛 Причепи в наявності</span>
+							<h2>Легкові причепи з доставкою по Україні</h2>
+							<p>140+ моделей, офіційна гарантія, допомога з реєстрацією.</p>
+							<span class="btn btn--accent">Обрати причіп</span>
+						</div>
+					</a>
 				</div>
+				<button class="home-slider__arrow home-slider__arrow--prev" type="button" data-slider-prev aria-label="Назад">‹</button>
+				<button class="home-slider__arrow home-slider__arrow--next" type="button" data-slider-next aria-label="Вперед">›</button>
+				<div class="home-slider__dots" data-slider-dots></div>
 			</section>
 
 			<!-- CATEGORIES -->

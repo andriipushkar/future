@@ -4,7 +4,36 @@
    Підключається на головній сторінці (див. index.example.php / README).
    ===================================================================== */
 
-/* Hero */
+/* ── Банер-слайдер ── */
+.home-slider{position:relative;border-radius:var(--radius-lg);overflow:hidden;margin:22px 0 30px;background:var(--c-surface)}
+.home-slider__track{display:flex;transition:transform .5s var(--ease);will-change:transform}
+.home-slider__slide{position:relative;flex:0 0 100%;min-height:380px;display:flex;align-items:center;
+	background-size:cover;background-position:center;color:#fff;text-decoration:none}
+.home-slider__slide::before{content:"";position:absolute;inset:0;
+	background:linear-gradient(90deg,rgba(15,58,160,.92) 0%,rgba(24,83,214,.7) 45%,rgba(24,83,214,.15) 100%)}
+.home-slider__content{position:relative;z-index:2;padding:54px 50px;max-width:560px}
+.home-slider__content .home-hero__badge{margin-bottom:16px}
+.home-slider__content h2{font-size:38px;line-height:1.12;letter-spacing:-1px;margin:0 0 14px}
+.home-slider__content p{font-size:17px;opacity:.94;margin:0 0 24px}
+.home-slider__arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+	width:46px;height:46px;border:0;border-radius:50%;background:rgba(255,255,255,.9);color:var(--c-brand-dark);
+	display:grid;place-items:center;font-size:26px;line-height:1;cursor:pointer;box-shadow:var(--shadow);transition:background .15s}
+.home-slider__arrow:hover{background:#fff}
+.home-slider__arrow--prev{left:18px}
+.home-slider__arrow--next{right:18px}
+.home-slider__dots{position:absolute;left:50px;bottom:22px;z-index:3;display:flex;gap:8px}
+.home-slider__dots button{width:10px;height:10px;padding:0;border:0;border-radius:50%;
+	background:rgba(255,255,255,.45);cursor:pointer;transition:background .15s,width .15s}
+.home-slider__dots button.is-active{background:#fff;width:26px;border-radius:6px}
+@media(max-width:900px){
+	.home-slider__slide{min-height:300px}
+	.home-slider__content{padding:36px 26px}
+	.home-slider__content h2{font-size:27px}
+	.home-slider__arrow{display:none}
+	.home-slider__dots{left:26px;bottom:16px}
+}
+
+/* Hero (статичний варіант, якщо слайдер не використовується) */
 .home-hero{position:relative;border-radius:var(--radius-lg);overflow:hidden;margin:22px 0 30px;color:#fff;
 	background:linear-gradient(120deg,#0f3aa0 0%,#1853d6 55%,#3b76ff 100%)}
 .home-hero__inner{position:relative;z-index:2;padding:54px 50px;max-width:640px}

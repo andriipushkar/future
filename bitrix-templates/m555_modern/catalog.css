@@ -73,3 +73,47 @@
 	.product__title{font-size:23px}
 	.product__price b{font-size:28px}
 }
+
+/* =====================================================================
+   Фільтр каталогу — стилізація стандартного bitrix:catalog.smart.filter
+   ===================================================================== */
+.m555 .bx-filter{
+	border:1px solid var(--c-border);border-radius:var(--radius);
+	background:#fff;padding:18px;box-shadow:var(--shadow-sm);
+}
+.m555 .bx-filter .bx-filter-section{border:0;padding:0}
+.m555 .bx-filter-title,
+.m555 .bx-filter .bx-filter-parameters-box-title{
+	font-weight:600 !important;color:var(--c-text) !important;font-size:15px !important;
+}
+.m555 .bx-filter-parameters-box{border-bottom:1px solid var(--c-border);padding:12px 0}
+.m555 .bx-filter-parameters-box:last-child{border-bottom:0}
+
+/* Чекбокси-«пігулки» */
+.m555 .bx-filter .checkbox,
+.m555 .bx-filter .bx-filter-param-label{cursor:pointer}
+.m555 .bx-filter .bx-filter-param-text{color:var(--c-text) !important}
+.m555 .bx-filter input[type="checkbox"]{accent-color:var(--c-brand)}
+
+/* Діапазон ціни */
+.m555 .bx-filter .bx-filter-parameters-box-container .bx-filter-input-container input{
+	border:1px solid var(--c-border) !important;border-radius:var(--radius-sm) !important;
+}
+.m555 .bx-filter .bx-ui-slider-track-container .bx-ui-slider-track{background:var(--c-surface-2) !important}
+.m555 .bx-filter .bx-ui-slider-part .bx-ui-slider-handle,
+.m555 .bx-filter .bx-ui-slider-pricebar-vd,
+.m555 .bx-filter .bx-ui-slider-pricebar-vn{background:var(--c-brand) !important}
+.m555 .bx-filter .bx-ui-slider-handle{border-color:var(--c-brand) !important}
+
+/* Кнопки фільтра */
+.m555 .bx-filter .bx-filter-button-box .btn,
+.m555 .bx-filter .bx-filter-popup-result a{
+	background:var(--c-brand) !important;border-color:var(--c-brand) !important;color:#fff !important;
+	border-radius:var(--radius-sm) !important;font-weight:600 !important;
+}
+.m555 .bx-filter .bx-filter-button-box .btn:hover{background:var(--c-brand-dark) !important}
+.m555 .bx-filter a.bx-filter-btn-reset{color:var(--c-muted) !important}
+
+/* Розкладка «фільтр + список» (за бажанням обгорнути на сторінці розділу) */
+.catalog-layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:28px;align-items:start}
+@media(max-width:900px){.catalog-layout{grid-template-columns:1fr}}

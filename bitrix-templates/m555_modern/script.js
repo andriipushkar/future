@@ -74,5 +74,62 @@
 				if (catMenu) catMenu.classList.remove("is-open");
 			}
 		});
+
+		/* ───────── Банер-слайдер ───────── */
+		document.querySelectorAll("[data-slider]").forEach(function (slider) {
+			var track  = slider.querySelector("[data-slider-track]");
+			var slides = track ? track.children : [];
+			if (!track || slides.length === 0) return;
+
+			var dotsBox = slider.querySelector("[data-slider-dots]");
+			var index   = 0;
+			var timer   = null;
+			var DELAY   = 6000;
+
+			// крапки
+			var dots = [];
+			if (dotsBox && slides.length > 1) {
+				for (var i = 0; i < slides.length; i++) {
+					var b = document.createElement("button");
+					b.type = "button";
+					b.setAttribute("aria-label", "Слайд " + (i + 1));
+					(function (n) { b.addEventListener("click", function () { go(n); restart(); }); })(i);
+					dotsBox.appendChild(b);
+					dots.push(b);
+				}
+			}
+
+			function go(n) {
+				index = (n + slides.length) % slides.length;
+				track.style.transform = "translateX(" + (-index * 100) + "%)";
+				dots.forEach(function (d, i) { d.classList.toggle("is-active", i === index); });
+			}
+			function next() { go(index + 1); }
+			function prev() { go(index - 1); }
+			function start() { if (slides.length > 1) timer = setInterval(next, DELAY); }
+			function stop()  { if (timer) { clearInterval(timer); timer = null; } }
+			function restart() { stop(); start(); }
+
+			var pn = slider.querySelector("[data-slider-next]");
+			var pp = slider.querySelector("[data-slider-prev]");
+			if (pn) pn.addEventListener("click", function () { next(); restart(); });
+			if (pp) pp.addEventListener("click", function () { prev(); restart(); });
+
+			slider.addEventListener("mouseenter", stop);
+			slider.addEventListener("mouseleave", start);
+
+			// свайп на тач-екранах
+			var x0 = null;
+			track.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; stop(); }, { passive: true });
+			track.addEventListener("touchend", function (e) {
+				if (x0 === null) return;
+				var dx = e.changedTouches[0].clientX - x0;
+				if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
+				x0 = null; start();
+			}, { passive: true });
+
+			go(0);
+			start();
+		});
 	});
 })();

@@ -22,25 +22,56 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/home.css");
 $APPLICATION->SetTitle("M555.COM.UA — товари для бізнесу, дому та саду");
 
-// ↓↓↓ ВКАЖІТЬ ВАШ ІНФОБЛОК КАТАЛОГУ ↓↓↓
-$IBLOCK_TYPE = "catalog";
-$IBLOCK_ID   = "1";
+// ↓↓↓ ВКАЖІТЬ ВАШІ ІНФОБЛОКИ ↓↓↓
+$IBLOCK_TYPE   = "catalog";   // тип інфоблоку каталогу
+$IBLOCK_ID     = "1";         // ID каталогу товарів
+$BANNERS_TYPE  = "content";   // тип інфоблоку банерів
+$BANNERS_ID    = "2";         // ID інфоблоку «Банери» для слайдера
 // ↑↑↑ ────────────────────────────── ↑↑↑
 ?>
 
-<!-- ───────── ГЕРОЙ ───────── -->
-<section class="home-hero">
-	<div class="home-hero__deco"></div>
-	<div class="home-hero__inner">
-		<span class="home-hero__badge">🚚 Офіційний імпортер · Гарантія від виробника</span>
-		<h1>Все для бізнесу, дому та саду — в одному магазині</h1>
-		<p>Причепи, контейнери, інструмент і тактичне спорядження від перевірених брендів. Супер ціни та швидка доставка по всій Україні.</p>
-		<div class="home-hero__cta">
-			<a class="btn btn--accent" href="<?= SITE_DIR ?>catalog/">Перейти в каталог</a>
-			<a class="btn btn--ghost" style="background:rgba(255,255,255,.15);color:#fff" href="<?= SITE_DIR ?>sale/">Акційні товари</a>
+<!-- ───────── БАНЕР-СЛАЙДЕР ───────── -->
+<?php $APPLICATION->IncludeComponent(
+	"bitrix:news.list", "m555_slider",
+	array(
+		"IBLOCK_TYPE"            => $BANNERS_TYPE,
+		"IBLOCK_ID"              => $BANNERS_ID,
+		"NEWS_COUNT"             => "6",
+		"SORT_BY1"               => "SORT",
+		"SORT_ORDER1"            => "ASC",
+		"FIELD_CODE"             => array("DETAIL_PICTURE", "PREVIEW_PICTURE", ""),
+		"PROPERTY_CODE"          => array("LINK", "BTN", ""),
+		"DETAIL_URL"             => "",
+		"PREVIEW_TRUNCATE_LEN"   => "160",
+		"ACTIVE_DATE_FORMAT"     => "d.m.Y",
+		"CACHE_TYPE"             => "A",
+		"CACHE_TIME"             => "3600",
+		"CACHE_GROUPS"           => "Y",
+		"DISPLAY_TOP_PAGER"      => "N",
+		"DISPLAY_BOTTOM_PAGER"   => "N",
+		"SET_TITLE"              => "N",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"AJAX_MODE"              => "N",
+	),
+	false
+); ?>
+<?php /*
+   Якщо інфоблоку банерів ще немає — створіть його (Контент → Інфоблоки),
+   додайте 3–6 елементів із картинкою та текстом. До появи банерів
+   замість слайдера можна тимчасово лишити статичний герой:
+
+	<section class="home-hero">
+		<div class="home-hero__deco"></div>
+		<div class="home-hero__inner">
+			<span class="home-hero__badge">🚚 Офіційний імпортер · Гарантія</span>
+			<h1>Все для бізнесу, дому та саду — в одному магазині</h1>
+			<p>Причепи, контейнери, інструмент і тактичне спорядження.</p>
+			<div class="home-hero__cta">
+				<a class="btn btn--accent" href="<?= SITE_DIR ?>catalog/">Перейти в каталог</a>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
+*/ ?>
 
 <!-- ───────── КАТЕГОРІЇ ───────── -->
 <section class="home-section">
