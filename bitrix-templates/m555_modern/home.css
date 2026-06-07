@@ -106,6 +106,17 @@
 .promo__card h3{font-size:24px;margin:0 0 8px;letter-spacing:-.5px}
 .promo__card p{margin:0 0 18px;opacity:.92}
 
-@media(max-width:1100px){.cat-grid,.prod-grid,.adv-grid{grid-template-columns:repeat(2,1fr)}}
+/* Адаптив сіток: ПК → ноут/планшет → телефон */
+@media(max-width:1180px){.cat-grid,.prod-grid,.adv-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:820px){.cat-grid,.prod-grid,.adv-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+@media(max-width:520px){.cat-grid,.prod-grid,.adv-grid{grid-template-columns:1fr}}
 @media(max-width:900px){.home-hero__inner{padding:38px 26px}.home-hero h1{font-size:32px}.promo{grid-template-columns:1fr}}
-@media(max-width:560px){.cat-grid,.prod-grid,.adv-grid{grid-template-columns:1fr}.home-hero h1{font-size:27px}}
+@media(max-width:560px){
+	.home-slider__slide{min-height:240px}
+	.home-slider__content{padding:26px 20px}
+	.home-slider__content h2{font-size:22px}
+	.home-slider__content p{font-size:14.5px}
+	.home-section{margin:34px 0}
+	.home-section__head h2{font-size:21px}
+	.home-hero h1{font-size:27px}
+}

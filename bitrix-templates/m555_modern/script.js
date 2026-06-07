@@ -20,11 +20,22 @@
 		overlay.className = "nav-overlay";
 		document.body.appendChild(overlay);
 
-		/* Липка шапка + кнопка нагору */
+		/* Липка шапка, авто-приховування при скролі вниз + кнопка нагору */
+		var lastY = 0;
 		function onScroll() {
 			var y = window.pageYOffset || document.documentElement.scrollTop;
-			if (header) header.classList.toggle("is-stuck", y > 4);
-			if (toTop)  toTop.classList.toggle("is-visible", y > 600);
+			if (header) {
+				header.classList.toggle("is-stuck", y > 4);
+				// ховаємо при прокручуванні вниз, показуємо при прокручуванні вгору
+				var menuOpen = navbar && navbar.classList.contains("is-open");
+				var dropOpen = catMenu && catMenu.classList.contains("is-open");
+				if (!menuOpen && !dropOpen) {
+					if (y > lastY && y > 220) header.classList.add("is-hidden");
+					else header.classList.remove("is-hidden");
+				}
+			}
+			if (toTop) toTop.classList.toggle("is-visible", y > 600);
+			lastY = y <= 0 ? 0 : y;
 		}
 		window.addEventListener("scroll", onScroll, { passive: true });
 		onScroll();
