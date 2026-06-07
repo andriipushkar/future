@@ -35,10 +35,10 @@
 	--radius-lg: 26px;
 	--radius-pill: 999px;
 
-	--shadow-sm: 0 2px 10px rgba(16,32,64,.05);
-	--shadow:    0 12px 36px rgba(16,32,64,.10);
-	--shadow-lg: 0 28px 70px rgba(13,22,48,.20);
-	--shadow-glass: 0 10px 40px rgba(16,32,64,.12), inset 0 1px 0 rgba(255,255,255,.55);
+	--shadow-sm: 0 1px 4px rgba(16,32,64,.04);
+	--shadow:    0 10px 30px rgba(16,32,64,.07);
+	--shadow-lg: 0 24px 60px rgba(13,22,48,.14);
+	--shadow-glass: 0 6px 24px rgba(16,32,64,.06), inset 0 1px 0 rgba(255,255,255,.5);
 
 	--container: 1280px;
 	--header-h:  78px;
@@ -56,12 +56,11 @@ body.m555 {
 	font-family: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 	color: var(--c-text);
 	background:
-		radial-gradient(1100px 620px at 82% -8%, rgba(35,88,230,.12), transparent 60%),
-		radial-gradient(900px 520px at -8% 8%, rgba(255,106,43,.07), transparent 55%),
-		linear-gradient(180deg, #f7f9fe 0%, #eaf0f9 100%);
+		radial-gradient(1200px 700px at 88% -14%, rgba(35,88,230,.05), transparent 60%),
+		linear-gradient(180deg, #fcfdff 0%, #f3f6fb 100%);
 	background-attachment: fixed;
 	font-size: 15px;
-	line-height: 1.55;
+	line-height: 1.6;
 	letter-spacing: -0.1px;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
@@ -292,7 +291,7 @@ svg { fill: currentColor; }
 
 /* ───────── Main / content ───────── */
 .site-main { flex: 1 0 auto; }
-.content-area { padding: 22px 0 60px; }
+.content-area { padding: 28px 0 84px; }
 
 /* ───────── Footer ───────── */
 .site-footer {

@@ -45,18 +45,18 @@
 	background:radial-gradient(circle,rgba(255,106,43,.5),transparent 65%);z-index:1}
 
 /* Секція */
-.home-section{margin:46px 0}
-.home-section__head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px}
-.home-section__head h2{font-size:26px;letter-spacing:-.5px;margin:0}
+.home-section{margin:64px 0}
+.home-section__head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:28px}
+.home-section__head h2{font-size:30px;letter-spacing:-.7px;margin:0;font-weight:700}
 .home-section__head a{color:var(--c-brand);font-weight:600;font-size:14px;white-space:nowrap}
 
 /* Категорії */
 .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.cat-card{display:flex;flex-direction:column;gap:14px;padding:24px;
-	border:1px solid var(--glass-border);border-radius:var(--radius);
+.cat-card{display:flex;flex-direction:column;gap:14px;padding:26px;
+	border:1px solid rgba(16,32,64,.07);border-radius:var(--radius);
 	background:var(--glass);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);
-	box-shadow:var(--shadow-glass);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
-.cat-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+	box-shadow:var(--shadow-glass);transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)}
+.cat-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(35,88,230,.25)}
 .cat-card__ic{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;
 	background:linear-gradient(135deg,rgba(35,88,230,.16),rgba(35,88,230,.06));color:var(--c-brand);
 	border:1px solid rgba(255,255,255,.6);overflow:hidden}
@@ -67,16 +67,16 @@
 
 /* Товари */
 .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.prod{position:relative;border:1px solid var(--glass-border);border-radius:var(--radius);overflow:hidden;
+.prod{position:relative;border:1px solid rgba(16,32,64,.07);border-radius:var(--radius);overflow:hidden;
 	background:var(--glass);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);
 	box-shadow:var(--shadow-glass);
-	display:flex;flex-direction:column;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
-.prod:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-.prod__img{aspect-ratio:1;background:linear-gradient(160deg,rgba(255,255,255,.5),rgba(238,242,250,.5));position:relative;display:grid;place-items:center;color:#aeb8cc;overflow:hidden}
+	display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)}
+.prod:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(35,88,230,.25)}
+.prod__img{aspect-ratio:1;background:#fff;position:relative;display:grid;place-items:center;color:#c4cdde;overflow:hidden}
 .prod__img img{width:100%;height:100%;object-fit:contain;padding:12px}
 .prod__img svg{width:64px;height:64px}
-.prod__tag{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#ff8049,var(--c-accent));color:#fff;font-size:12px;font-weight:600;padding:5px 11px;border-radius:var(--radius-pill);z-index:2;box-shadow:0 4px 12px rgba(255,106,43,.35)}
-.prod__tag--new{background:linear-gradient(135deg,#22c55e,var(--c-success));box-shadow:0 4px 12px rgba(22,163,74,.32)}
+.prod__tag{position:absolute;top:14px;left:14px;background:var(--c-accent);color:#fff;font-size:11.5px;font-weight:600;letter-spacing:.2px;padding:5px 10px;border-radius:var(--radius-pill);z-index:2}
+.prod__tag--new{background:var(--c-success)}
 .prod__body{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
 .prod__name{font-size:14.5px;font-weight:500;line-height:1.35;flex:1;color:var(--c-text)}
 .prod__name a{color:inherit}
@@ -90,7 +90,7 @@
 .adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .adv{display:flex;gap:14px;align-items:flex-start;padding:24px;border-radius:var(--radius);
 	background:var(--glass);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);
-	border:1px solid var(--glass-border);box-shadow:var(--shadow-glass)}
+	border:1px solid rgba(16,32,64,.07);box-shadow:var(--shadow-glass)}
 .adv__ic{width:50px;height:50px;flex:0 0 auto;border-radius:14px;display:grid;place-items:center;
 	background:linear-gradient(135deg,rgba(255,106,43,.18),rgba(255,106,43,.06));color:var(--c-accent);
 	border:1px solid rgba(255,255,255,.6)}
